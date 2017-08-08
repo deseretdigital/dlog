@@ -156,7 +156,6 @@ type gelfWriter struct {
 func (t *gelfWriter) Write(p []byte) (n int, err error) {
 	err = nil
 	n = len(p)
-	fmt.Printf("%s (%v): %s DID IT SON! {%s}", t.AppName, t.LoggingLevel, p, t.Url)
 	short := p
 	full := []byte("")
 	if i := bytes.IndexRune(p, '\n'); i > 0 {
