@@ -135,12 +135,12 @@ func Init(
 func InitGelf(config Config) {
 	traceWriter := ioutil.Discard
 	if config.Verbose {
-		traceWriter = io.MultiWriter(os.Stdout, NewGelfWriter(config.Url, config.AppName, 1))
+		traceWriter = io.MultiWriter(os.Stdout, NewGelfWriter(config.Url, config.AppName, 7))
 	}
-	infoWriter := io.MultiWriter(os.Stdout, NewGelfWriter(config.Url, config.AppName, 3))
-	warnWriter := io.MultiWriter(os.Stdout, NewGelfWriter(config.Url, config.AppName, 5))
-	errorWriter := io.MultiWriter(os.Stdout, NewGelfWriter(config.Url, config.AppName, 7))
-	fatalWriter := io.MultiWriter(os.Stdout, NewGelfWriter(config.Url, config.AppName, 9))
+	infoWriter := io.MultiWriter(os.Stdout, NewGelfWriter(config.Url, config.AppName, 6))
+	warnWriter := io.MultiWriter(os.Stdout, NewGelfWriter(config.Url, config.AppName, 4))
+	errorWriter := io.MultiWriter(os.Stdout, NewGelfWriter(config.Url, config.AppName, 3))
+	fatalWriter := io.MultiWriter(os.Stdout, NewGelfWriter(config.Url, config.AppName, 2))
 	if !config.Verbose {
 		traceWriter = ioutil.Discard
 	}
